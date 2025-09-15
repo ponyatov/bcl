@@ -7,7 +7,7 @@
 %token<n> INT HEX OCT BIN
 %token<f> NUM
 %%
-syntax: | syntax ex
+syntax: | syntax ex {fprintf(stderr,".\n");}
 
 ex: NUM     { fprintf(stderr,"num:%e\n",$1); }
   | INT     { fprintf(stderr,"int:%i\n",$1); }

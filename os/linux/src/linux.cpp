@@ -1,5 +1,5 @@
-#include "os.hpp"
 #include "cli.hpp"
+#include "os.hpp"
 #include "vm.hpp"
 
 __attribute__((weak)) int main(int argc, char* argv[]) {
@@ -18,6 +18,6 @@ __attribute__((weak)) int main(int argc, char* argv[]) {
     return 0;
 }
 
-void arg(int argc, char* argv) {  //
+__attribute__((weak)) void arg(int argc, char* argv) {  //
     fprintf(stderr, "arg[%i] = <%s>\n", argc, argv);
 }
