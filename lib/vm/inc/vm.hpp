@@ -106,6 +106,35 @@ extern void init();   ///< `( -- )` init bytecode engine
 extern void sync_();  ///< `( -- )` sync registers into @ref bcHeader
 extern void save();   ///< `( -- )` dump @ref M bytecode dump into `tmp/dump.bc`
 
+/// @name flow control
+
+extern void jmp();   ///< `( -- )` unconditional jump
+extern void jz();    ///< `( bool -- )` jump if `false`
+extern void call();  ///< `( -- )`
+extern void ret();   ///< `( -- )`
+
+/// @name data stack literals
+extern void lit();   ///< `( -- )`
+extern void lits();  ///< `( -- )`
+extern void litb();  ///< `( -- )`
+
+/// @name data stack ops
+
+extern void push(cell n);   //< `( -- n )`
+extern void push(float f);  //< `( -- f )`
+extern cell pop();          //< `( n -- )`
+extern cell top();          //< `( n -- n )`
+
+extern void dot();    ///< `( ... -- )` clean @ref D stack
+extern void dup();    ///< `( -- )`
+extern void drop();   ///< `( -- )`
+extern void swap();   ///< `( -- )`
+extern void over();   ///< `( -- )`
+extern void rot();    ///< `( -- )`
+extern void mrot();   ///< `( -- )`
+extern void pick();   ///< `( -- )`
+extern void depth();  ///< `( -- )`
+
 /// @name debug
 extern void dump();  ///< `( -- )` dump @ref vm state
 /// @}

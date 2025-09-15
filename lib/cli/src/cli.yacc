@@ -6,14 +6,15 @@
 
 %token<n> INT HEX OCT BIN
 %token<f> NUM
-%%
-syntax: | syntax ex {fprintf(stderr,".\n");}
 
-ex: NUM     { fprintf(stderr,"num:%e\n",$1); }
-  | INT     { fprintf(stderr,"int:%i\n",$1); }
-  | HEX     { fprintf(stderr,"hex:%x\n",$1); }
-  | OCT     { fprintf(stderr,"oct:%o\n",$1); }
-  | BIN     { fprintf(stderr,"bin:%b\n",$1); }
+%%
+syntax: | syntax ex { dump(); }
+
+ex: NUM     { fprintf(stderr,"num:%e\n",$1); push($1); }
+  | INT     { fprintf(stderr,"int:%i\n",$1); push($1); }
+  | HEX     { fprintf(stderr,"hex:%x\n",$1); push($1); }
+  | OCT     { fprintf(stderr,"oct:%o\n",$1); push($1); }
+  | BIN     { fprintf(stderr,"bin:%b\n",$1); push($1); }
 
 %%
 void yyerror(const char *msg) {

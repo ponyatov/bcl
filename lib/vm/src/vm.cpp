@@ -1,4 +1,5 @@
 #include "vm.hpp"
+
 #include "os.hpp"
 
 byte M[Msz];
@@ -18,4 +19,30 @@ void nop() {
 void halt() {
     if (trace) fprintf(stderr, "halt\n\n");
     exit(0);
+}
+
+void dump() {
+    if (trace) fprintf(stderr, "dump");
+    fprintf(stderr, "\t[ ");
+    for (uint i = 0; i < Dp; i++) fprintf(stderr, "%i ", D[i]);
+    fprintf(stderr, " ]\n");
+}
+
+void push(cell n) {
+    assert(Dp < Dsz);
+    D[Dp++] = n;
+}
+
+void push(float f) {  //
+    push(*(cell*)&f);
+}
+
+cell pop() {
+    assert(Dp > 0);
+    return D[--Dp];
+}
+
+cell top() {
+    assert(Dp > 0);
+    return D[Dp - 1];
 }
