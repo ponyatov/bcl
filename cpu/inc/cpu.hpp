@@ -4,7 +4,7 @@
 /// @ingroup cpu
 /// @defgroup cpurpi rpi
 /// @ingroup cpu
-/// @defgroup cpumcu mcu
+/// @defgroup cpucm cm
 /// @ingroup cpu
 /// @defgroup cpuesp esp
 /// @ingroup cpu
