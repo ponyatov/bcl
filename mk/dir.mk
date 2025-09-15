@@ -6,3 +6,9 @@ INC       = $(CWD)/inc
 SRC       = $(CWD)/src
 TMP       = $(CWD)/tmp
 REF       = $(CWD)/ref
+CAR       = $(HOME)/.cargo
+#
+CROSS     = $(HOME)/cross
+ROOT      = $(CWD)/root
+BOOT      = $(ROOT)/boot
+DISTR    ?= $(HOME)/distr
