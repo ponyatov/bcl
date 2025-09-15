@@ -1,0 +1,10 @@
+HW = pc
+# HW = rpi3bp
+# HW = opi800
+# HW = f429disco
+# HW = l496disco
+# HW = iskra
+# HW = pillf030
+# HW = pillf103
+# HW = esp8266
+# HW = esp32
