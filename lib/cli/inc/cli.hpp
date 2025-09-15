@@ -1,0 +1,49 @@
+/// @defgroup cli cli
+/// @ingroup lib
+/// @{
+
+#pragma once
+
+#include "os.hpp"
+
+/// @defgroup lexer lexer
+/// @ingroup cli
+/// @{
+extern int yylex();                    ///< lexer (`flex`)
+extern int yylineno;                   ///< current line
+extern char *yyfile;                   ///< current file name
+#ifdef LEMON
+extern int   yyin;                     ///< current file handler
+#else
+extern FILE *yyin;                     ///< current file handler
+#endif // LEMON
+extern char *yytext;                   ///< token lexeme value
+
+/// @name number parsers
+extern float num(char *val);  ///< @returns float
+extern   int dec(char *val);  ///< @returns decimal
+extern   int hex(char *val);  ///< @returns hexadecimal
+extern   int oct(char *val);  ///< @returns octal
+extern   int bin(char *val);  ///< @returns binary
+
+/// @brief construct token `(Class,ID)`
+/// @param[in] C class name: calls `C(char*)` constructor
+/// @param[in] X .yacc token identifier
+#define TOKEN(C, X)               \
+    {                             \
+        yylval.t = new C(yytext); \
+        return X;                 \
+    }
+
+/// @}
+
+/// @defgroup parser parser
+/// @ingroup cli
+/// @{
+extern int yyparse();                  ///< parser (`bison`)
+extern void yyerror(const char *msg);  ///< syntax error callback
+
+#include "cli.yacc.hpp"
+/// @}
+
+/// @}
