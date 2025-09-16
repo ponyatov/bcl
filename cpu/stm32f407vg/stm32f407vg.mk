@@ -1,1 +1,1 @@
-ARCH = cortexm4
+ARCH = None
