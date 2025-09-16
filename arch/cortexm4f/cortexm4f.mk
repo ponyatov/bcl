@@ -1,2 +1,2 @@
 include arch/cortexm/cortexm.mk
-RTARGET = thumbv6m-none-eabi
+RTARGET = thumbv7em-none-eabihf
