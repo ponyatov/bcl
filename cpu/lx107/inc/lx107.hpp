@@ -1,2 +1,2 @@
 /// @defgroup lx107 lx107
-/// @ingroup cpuesp
+/// @ingroup cpu
