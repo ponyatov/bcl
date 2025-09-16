@@ -28,6 +28,8 @@ dependencies = [
  "libc",
  "memmap2",
  "panic-semihosting",
+ "stm32f0 0.16.0",
+ "stm32f0xx-hal",
  "stm32f1 0.16.0",
  "stm32f1xx-hal",
  "stm32f4",
@@ -399,6 +401,46 @@ name = "stable_deref_trait"
 version = "1.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a8f112729512f8e442d81f95a8a7ddf2b7c6b8a1a6f509a95864142b30cab2d3"
+
+[[package]]
+name = "stm32f0"
+version = "0.14.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ad6efffc472f66098c4ec84d5907b4d001c550db86a7dfa607adf1ba94adbf82"
+dependencies = [
+ "bare-metal 1.0.0",
+ "cortex-m",
+ "cortex-m-rt",
+ "vcell",
+]
+
+[[package]]
+name = "stm32f0"
+version = "0.16.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e3ac1db9b0a210cc49367a5d14f53660b85b9f796e6c1538b7796660b9c4c6f7"
+dependencies = [
+ "cortex-m",
+ "cortex-m-rt",
+ "critical-section",
+ "vcell",
+]
+
+[[package]]
+name = "stm32f0xx-hal"
+version = "0.18.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "79544d457fe9a119c6fd02f0a16b8c20f39472b03199aac0a307d871a7015ad8"
+dependencies = [
+ "bare-metal 1.0.0",
+ "bxcan 0.6.2",
+ "cast",
+ "cortex-m",
+ "embedded-hal 0.2.7",
+ "nb 1.1.0",
+ "stm32f0 0.14.0",
+ "void",
+]
 
 [[package]]
 name = "stm32f1"
