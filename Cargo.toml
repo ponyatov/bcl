@@ -1,0 +1,36 @@
+[package]
+name                    =  "bcl"
+version                 =  "0.0.1"
+description             =  "bytecode language"
+authors                 = ["Dmitry Ponyatov <dponyatov@gmail.com>"]
+license                 =  "MIT"
+repository              =  "https://github.com/ponyatov/bcl"
+edition                 =  "2024"
+#
+[[bin]]
+name                    = "main"
+path                    = "src/main.rs"
+#
+[[bin]]
+name                    = "server"
+path                    = "src/server.rs"
+#
+[dependencies]
+const_format            = "0.2"
+#
+[target.'cfg(target_os = "linux")'.dependencies]
+libc                    = "0.2"
+memmap2                 = "0.9"
+#
+[target.'cfg(target_arch = "arm")'.dependencies]
+cortex-m                = "0.7"
+cortex-m-rt             = "0.7"
+cortex-m-semihosting    = "0.5"
+panic-semihosting       = "0.6"
+#
+stm32f1                 = {version="0.16",optional = true}
+stm32f1xx-hal           = {version="0.10",optional = true}
+stm32f4                 = {version="0.16",optional = true}
+stm32f4xx-hal           = {version="0.22",optional = true}
+stm32l4                 = {version="0.16",optional = true}
+stm32l4xx-hal           = {version="0.7" ,optional = true}
