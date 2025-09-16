@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 mod config;
 mod vm;
 
@@ -17,7 +19,7 @@ fn main() {
         let src = unsafe { Mmap::map(&file).unwrap() };
         eprintln!("\tsize: {} bytes", src.len());
         // eprintln!("{:?}", &mmap[..] as &str);
-        io::stdout().write_all(&src[..]).unwrap();
+        // io::stdout().write_all(&src[..]).unwrap();
     }
 }
 
