@@ -1,2 +1,2 @@
 /// @defgroup rk3399 rk3399
-/// @ingroup cpurpi
+/// @ingroup cpu
