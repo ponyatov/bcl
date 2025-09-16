@@ -34,3 +34,23 @@ stm32f4                 = {version="0.16",optional = true}
 stm32f4xx-hal           = {version="0.22",optional = true}
 stm32l4                 = {version="0.16",optional = true}
 stm32l4xx-hal           = {version="0.7" ,optional = true}
+#
+[features]
+# hw
+pc          = ["i5"]
+qemu386     = ["i486"]
+a7n8x       = ["i686"]
+rpi3bp      = ["bcm2837"]
+opi800      = ["rk3399"]
+rpi4        = ["bcm2711"]
+rpi5        = ["bcm2712"]
+pillf030    = ["stm32f030f4"]
+pillf103    = ["stm32f103c8"]
+lm3s6       = ["lm3s6965"]
+iskra       = ["stm32f405rg"]
+f4disco     = ["stm32f407vg"]
+f429disco   = ["stm32f429zi"]
+l496disco   = ["stm32l496ag"]
+esp8266     = ["lx106"]
+esp32       = ["lx107"]
+
